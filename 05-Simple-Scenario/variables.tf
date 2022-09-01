@@ -31,3 +31,20 @@ variable "product_name" {
   description = "The name of the product"
   default = "No project"
 }
+
+# Remote state
+
+variable "remote_state_resource_group_name" {
+  type = string
+  description = "Resource group where the remote state storage account is created."
+}
+
+variable "remote_state_storage_account_name" {
+  type = string
+  description = "Name of the remote state storage account."
+}
+
+variable "remote_state_container_name" {
+  type = string
+  description = "Name of the remote state storage account container."
+}
