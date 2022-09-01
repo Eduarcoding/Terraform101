@@ -54,6 +54,7 @@ jobs:
         tf_actions_version: 1.1.7
         tf_actions_subcommand: 'plan'
         tf_actions_working_dir: "./05-Simple-Scenario"
+        args: "-var-file='./05-Simple-Scenario/env/dev.tfvars'"
  
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
