@@ -25,3 +25,7 @@ output "Previous_section_rs_name" {
 output "Previous_section_rs_location" {
   value = azurerm_resource_group.this.location
 }
+
+output "localFileOutput" {
+  value = local.localFile.myKey
+}

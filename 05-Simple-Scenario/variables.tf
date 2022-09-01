@@ -2,7 +2,7 @@
 variable "resource_group_name" {
   type        = string
   description = "The resource group name."
-  default = "Terraform101-03-Blocks"
+  default = "Terraform101-05-Simple-Scenario"
 
   validation {
     condition     = length(var.resource_group_name) > 4 && length(var.resource_group_name) > 16
