@@ -1,7 +1,7 @@
 ## Provider
 provider "azurerm" {
   features {
-    
+
   }
 }
 
@@ -30,14 +30,14 @@ resource "azurerm_linux_web_app" "this" {
   service_plan_id     = azurerm_service_plan.this.id
 
   app_settings = {
-    "BlobStorageOptions__BlobStorageName"               = azurerm_storage_account.this.name
-    "BlobStorageOptions__BlobStorageAccountKey"         = azurerm_storage_account.this.primary_access_key
+    "BlobStorageOptions__BlobStorageName"       = azurerm_storage_account.this.name
+    "BlobStorageOptions__BlobStorageAccountKey" = azurerm_storage_account.this.primary_access_key
 
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.this.connection_string
   }
 
   site_config {
-    
+
   }
 
   tags = local.common_tags
@@ -68,7 +68,7 @@ resource "azurerm_storage_account" "this" {
 
 resource "azurerm_storage_account_network_rules" "example" {
   storage_account_id = azurerm_storage_account.this.id
-  default_action             = "Allow"
-  ip_rules                   = azurerm_linux_web_app.this.outbound_ip_address_list
-  bypass                     = ["Metrics"]
+  default_action     = "Allow"
+  ip_rules           = azurerm_linux_web_app.this.outbound_ip_address_list
+  bypass             = ["Metrics"]
 }
